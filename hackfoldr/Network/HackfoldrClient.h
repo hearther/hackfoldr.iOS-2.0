@@ -1,5 +1,5 @@
 //
-//  NetworkMM.h
+//  HackfoldrClient.h
 //  hackfoldr
 //
 //  Created by bunny lin on 2014/9/30.
@@ -10,9 +10,9 @@
 #import "HFFoldrInfo.h"
 #import "Bolts.h"
 
-@interface  : NSObject
+@interface HackfoldrClient : NSObject
 @property (nonatomic, strong, readonly) NSString *hfId;
-+ (NetworkMM *)sharedNetworkMM;
++ (HackfoldrClient *)sharedHackfoldrClient;
 - (void)requestCSVData:(NSString *)hfId
                success:(void (^)(HFFoldrInfo *hfInfo))success
                failure:(void (^)(NSError *error, id CSV))failure;

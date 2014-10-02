@@ -1,28 +1,28 @@
 //
-//  NetworkMM.m
+//  HackfoldrClient.m
 //  hackfoldr
 //
 //  Created by bunny lin on 2014/9/30.
 //  Copyright (c) 2014年 org.g0v. All rights reserved.
 //
 
-#import "NetworkMM.h"
+#import "HackfoldrClient.h"
 #import "AFHTTPRequestOperation.h"
 #import <MMPCSVUtil/MMPCSVUtil.h>
 
 
 
-@implementation NetworkMM
-static NetworkMM *sharedNetworkMM = nil;
+@implementation HackfoldrClient
+static HackfoldrClient *sharedHackfoldrClient = nil;
 
-+ (NetworkMM *)sharedNetworkMM
++ (HackfoldrClient *)sharedHackfoldrClient
 {
     @synchronized(self) {
-        if (sharedNetworkMM == nil) {
-            sharedNetworkMM = [[self alloc] init];
+        if (sharedHackfoldrClient == nil) {
+            sharedHackfoldrClient = [[self alloc] init];
         }
     }
-    return sharedNetworkMM;
+    return sharedHackfoldrClient;
 }
 
 
