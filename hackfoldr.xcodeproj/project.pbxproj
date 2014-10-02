@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66CB169F19DAB13E00152D6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB169E19DAB13E00152D6B /* main.m */; };
+		66CB16A219DAB13E00152D6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16A119DAB13E00152D6B /* AppDelegate.m */; };
+		66CB16AA19DAB13E00152D6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66CB16A919DAB13E00152D6B /* Images.xcassets */; };
+		66CB16B919DAB13F00152D6B /* hackfoldrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16B819DAB13F00152D6B /* hackfoldrTests.m */; };
+		66CB16D719DAB2E300152D6B /* HFCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16CE19DAB2E300152D6B /* HFCenterViewController.m */; };
+		66CB16D819DAB2E300152D6B /* HFLeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16D019DAB2E300152D6B /* HFLeftPanelViewController.m */; };
+		66CB16D919DAB2E300152D6B /* HFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16D219DAB2E300152D6B /* HFSettingViewController.m */; };
+		66CB16DE19DAB46800152D6B /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CB16DA19DAB46800152D6B /* Main_iPad.storyboard */; };
+		66CB16DF19DAB46800152D6B /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CB16DC19DAB46800152D6B /* Main_iPhone.storyboard */; };
+		66CB16E519DAB6B100152D6B /* HFFoldrInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16E419DAB6B100152D6B /* HFFoldrInfo.m */; };
+		66CB16E819DAB75500152D6B /* HFSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16E719DAB75500152D6B /* HFSection.m */; };
+		66CB16EB19DAB7DA00152D6B /* HFRowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16EA19DAB7DA00152D6B /* HFRowInfo.m */; };
+		66CB16F119DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */; };
+		66D6707C19DD279D002496C0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D6707B19DD279D002496C0 /* settings.png */; };
+		66D6707F19DD2EE6002496C0 /* HackfoldrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6707E19DD2EE6002496C0 /* HackfoldrClient.m */; };
+		7CACF60150FD4A92995A6133 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC99738C8DB74D86AA3D6CEC /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		66CB16B319DAB13F00152D6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66CB169119DAB13E00152D6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 66CB169819DAB13E00152D6B;
+			remoteInfo = hackfoldr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		66BDA81419DC667100C5660B /* CommonDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDef.h; sourceTree = "<group>"; };
+		66BDA81519DC66AB00C5660B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		66CB169919DAB13E00152D6B /* hackfoldr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackfoldr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CB169D19DAB13E00152D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66CB169E19DAB13E00152D6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		66CB16A019DAB13E00152D6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		66CB16A119DAB13E00152D6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		66CB16A919DAB13E00152D6B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		66CB16B219DAB13F00152D6B /* hackfoldrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hackfoldrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CB16B719DAB13F00152D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66CB16B819DAB13F00152D6B /* hackfoldrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hackfoldrTests.m; sourceTree = "<group>"; };
+		66CB16CD19DAB2E300152D6B /* HFCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFCenterViewController.h; sourceTree = "<group>"; };
+		66CB16CE19DAB2E300152D6B /* HFCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFCenterViewController.m; sourceTree = "<group>"; };
+		66CB16CF19DAB2E300152D6B /* HFLeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFLeftPanelViewController.h; sourceTree = "<group>"; };
+		66CB16D019DAB2E300152D6B /* HFLeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFLeftPanelViewController.m; sourceTree = "<group>"; };
+		66CB16D119DAB2E300152D6B /* HFSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSettingViewController.h; sourceTree = "<group>"; };
+		66CB16D219DAB2E300152D6B /* HFSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSettingViewController.m; sourceTree = "<group>"; };
+		66CB16DB19DAB46800152D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		66CB16DD19DAB46800152D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		66CB16E319DAB6B100152D6B /* HFFoldrInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFFoldrInfo.h; sourceTree = "<group>"; };
+		66CB16E419DAB6B100152D6B /* HFFoldrInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFFoldrInfo.m; sourceTree = "<group>"; };
+		66CB16E619DAB75500152D6B /* HFSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFSection.h; sourceTree = "<group>"; };
+		66CB16E719DAB75500152D6B /* HFSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSection.m; sourceTree = "<group>"; };
+		66CB16E919DAB7DA00152D6B /* HFRowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFRowInfo.h; sourceTree = "<group>"; };
+		66CB16EA19DAB7DA00152D6B /* HFRowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFRowInfo.m; sourceTree = "<group>"; };
+		66CB16EF19DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLExpandableTableViewControllerHeaderCell.h; path = ../Cell/SLExpandableTableViewControllerHeaderCell.h; sourceTree = "<group>"; };
+		66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLExpandableTableViewControllerHeaderCell.m; path = ../Cell/SLExpandableTableViewControllerHeaderCell.m; sourceTree = "<group>"; };
+		66D6707B19DD279D002496C0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		66D6707D19DD2EE6002496C0 /* HackfoldrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackfoldrClient.h; sourceTree = "<group>"; };
+		66D6707E19DD2EE6002496C0 /* HackfoldrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackfoldrClient.m; sourceTree = "<group>"; };
+		9A28B143C50F481D85E74E9F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		BC99738C8DB74D86AA3D6CEC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66CB169619DAB13E00152D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CACF60150FD4A92995A6133 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CB16AF19DAB13F00152D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66BDA81019DC624600C5660B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				66D6707D19DD2EE6002496C0 /* HackfoldrClient.h */,
+				66D6707E19DD2EE6002496C0 /* HackfoldrClient.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		66CB169019DAB13E00152D6B = {
+			isa = PBXGroup;
+			children = (
+				66CB169B19DAB13E00152D6B /* hackfoldr */,
+				66CB16B519DAB13F00152D6B /* hackfoldrTests */,
+				66CB169A19DAB13E00152D6B /* Products */,
+				9A28B143C50F481D85E74E9F /* Pods.xcconfig */,
+				83E60E1EA7364BD1A9A871CD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66CB169A19DAB13E00152D6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66CB169919DAB13E00152D6B /* hackfoldr.app */,
+				66CB16B219DAB13F00152D6B /* hackfoldrTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66CB169B19DAB13E00152D6B /* hackfoldr */ = {
+			isa = PBXGroup;
+			children = (
+				66D6707A19DD279D002496C0 /* image */,
+				66BDA81019DC624600C5660B /* Network */,
+				66CB16C219DAB2E300152D6B /* DataModel */,
+				66CB16CC19DAB2E300152D6B /* ViewController */,
+				66CB16A019DAB13E00152D6B /* AppDelegate.h */,
+				66CB16A119DAB13E00152D6B /* AppDelegate.m */,
+				66BDA81419DC667100C5660B /* CommonDef.h */,
+				66CB16A919DAB13E00152D6B /* Images.xcassets */,
+				66CB16DA19DAB46800152D6B /* Main_iPad.storyboard */,
+				66CB16DC19DAB46800152D6B /* Main_iPhone.storyboard */,
+				66CB169C19DAB13E00152D6B /* Supporting Files */,
+			);
+			path = hackfoldr;
+			sourceTree = "<group>";
+		};
+		66CB169C19DAB13E00152D6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66BDA81519DC66AB00C5660B /* PrefixHeader.pch */,
+				66CB169D19DAB13E00152D6B /* Info.plist */,
+				66CB169E19DAB13E00152D6B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66CB16B519DAB13F00152D6B /* hackfoldrTests */ = {
+			isa = PBXGroup;
+			children = (
+				66CB16B819DAB13F00152D6B /* hackfoldrTests.m */,
+				66CB16B619DAB13F00152D6B /* Supporting Files */,
+			);
+			path = hackfoldrTests;
+			sourceTree = "<group>";
+		};
+		66CB16B619DAB13F00152D6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				66CB16B719DAB13F00152D6B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66CB16C219DAB2E300152D6B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				66CB16E319DAB6B100152D6B /* HFFoldrInfo.h */,
+				66CB16E419DAB6B100152D6B /* HFFoldrInfo.m */,
+				66CB16E619DAB75500152D6B /* HFSection.h */,
+				66CB16E719DAB75500152D6B /* HFSection.m */,
+				66CB16E919DAB7DA00152D6B /* HFRowInfo.h */,
+				66CB16EA19DAB7DA00152D6B /* HFRowInfo.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		66CB16CC19DAB2E300152D6B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66CB16CD19DAB2E300152D6B /* HFCenterViewController.h */,
+				66CB16CE19DAB2E300152D6B /* HFCenterViewController.m */,
+				66CB16EF19DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.h */,
+				66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */,
+				66CB16CF19DAB2E300152D6B /* HFLeftPanelViewController.h */,
+				66CB16D019DAB2E300152D6B /* HFLeftPanelViewController.m */,
+				66CB16D119DAB2E300152D6B /* HFSettingViewController.h */,
+				66CB16D219DAB2E300152D6B /* HFSettingViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		66D6707A19DD279D002496C0 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				66D6707B19DD279D002496C0 /* settings.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		83E60E1EA7364BD1A9A871CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC99738C8DB74D86AA3D6CEC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66CB169819DAB13E00152D6B /* hackfoldr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66CB16BC19DAB13F00152D6B /* Build configuration list for PBXNativeTarget "hackfoldr" */;
+			buildPhases = (
+				98B100B7C50C489AB57C936E /* Check Pods Manifest.lock */,
+				66CB169519DAB13E00152D6B /* Sources */,
+				66CB169619DAB13E00152D6B /* Frameworks */,
+				66CB169719DAB13E00152D6B /* Resources */,
+				B98659BCE13D48EB9AA313E8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hackfoldr;
+			productName = hackfoldr;
+			productReference = 66CB169919DAB13E00152D6B /* hackfoldr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66CB16B119DAB13F00152D6B /* hackfoldrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66CB16BF19DAB13F00152D6B /* Build configuration list for PBXNativeTarget "hackfoldrTests" */;
+			buildPhases = (
+				66CB16AE19DAB13F00152D6B /* Sources */,
+				66CB16AF19DAB13F00152D6B /* Frameworks */,
+				66CB16B019DAB13F00152D6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66CB16B419DAB13F00152D6B /* PBXTargetDependency */,
+			);
+			name = hackfoldrTests;
+			productName = hackfoldrTests;
+			productReference = 66CB16B219DAB13F00152D6B /* hackfoldrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66CB169119DAB13E00152D6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = org.g0v;
+				TargetAttributes = {
+					66CB169819DAB13E00152D6B = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					66CB16B119DAB13F00152D6B = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 66CB169819DAB13E00152D6B;
+					};
+				};
+			};
+			buildConfigurationList = 66CB169419DAB13E00152D6B /* Build configuration list for PBXProject "hackfoldr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66CB169019DAB13E00152D6B;
+			productRefGroup = 66CB169A19DAB13E00152D6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66CB169819DAB13E00152D6B /* hackfoldr */,
+				66CB16B119DAB13F00152D6B /* hackfoldrTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66CB169719DAB13E00152D6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D6707C19DD279D002496C0 /* settings.png in Resources */,
+				66CB16DF19DAB46800152D6B /* Main_iPhone.storyboard in Resources */,
+				66CB16DE19DAB46800152D6B /* Main_iPad.storyboard in Resources */,
+				66CB16AA19DAB13E00152D6B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CB16B019DAB13F00152D6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98B100B7C50C489AB57C936E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B98659BCE13D48EB9AA313E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66CB169519DAB13E00152D6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CB16F119DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m in Sources */,
+				66CB16D819DAB2E300152D6B /* HFLeftPanelViewController.m in Sources */,
+				66CB16EB19DAB7DA00152D6B /* HFRowInfo.m in Sources */,
+				66D6707F19DD2EE6002496C0 /* HackfoldrClient.m in Sources */,
+				66CB16D719DAB2E300152D6B /* HFCenterViewController.m in Sources */,
+				66CB16D919DAB2E300152D6B /* HFSettingViewController.m in Sources */,
+				66CB16A219DAB13E00152D6B /* AppDelegate.m in Sources */,
+				66CB169F19DAB13E00152D6B /* main.m in Sources */,
+				66CB16E819DAB75500152D6B /* HFSection.m in Sources */,
+				66CB16E519DAB6B100152D6B /* HFFoldrInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66CB16AE19DAB13F00152D6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CB16B919DAB13F00152D6B /* hackfoldrTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		66CB16B419DAB13F00152D6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 66CB169819DAB13E00152D6B /* hackfoldr */;
+			targetProxy = 66CB16B319DAB13F00152D6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		66CB16DA19DAB46800152D6B /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66CB16DB19DAB46800152D6B /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		66CB16DC19DAB46800152D6B /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66CB16DD19DAB46800152D6B /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66CB16BA19DAB13F00152D6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66CB16BB19DAB13F00152D6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66CB16BD19DAB13F00152D6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A28B143C50F481D85E74E9F /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				INFOPLIST_FILE = hackfoldr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		66CB16BE19DAB13F00152D6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A28B143C50F481D85E74E9F /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				INFOPLIST_FILE = hackfoldr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		66CB16C019DAB13F00152D6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = hackfoldrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hackfoldr.app/hackfoldr";
+			};
+			name = Debug;
+		};
+		66CB16C119DAB13F00152D6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = hackfoldrTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hackfoldr.app/hackfoldr";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66CB169419DAB13E00152D6B /* Build configuration list for PBXProject "hackfoldr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CB16BA19DAB13F00152D6B /* Debug */,
+				66CB16BB19DAB13F00152D6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66CB16BC19DAB13F00152D6B /* Build configuration list for PBXNativeTarget "hackfoldr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CB16BD19DAB13F00152D6B /* Debug */,
+				66CB16BE19DAB13F00152D6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66CB16BF19DAB13F00152D6B /* Build configuration list for PBXNativeTarget "hackfoldrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CB16C019DAB13F00152D6B /* Debug */,
+				66CB16C119DAB13F00152D6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66CB169119DAB13E00152D6B /* Project object */;
+}
