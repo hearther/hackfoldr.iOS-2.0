@@ -7,6 +7,7 @@
 //
 
 #import "HFRowInfo.h"
+#import "HFUrlParser.h"
 
 typedef NS_ENUM(NSUInteger, FieldType) {
     FieldType_URLString = 0,
@@ -15,6 +16,7 @@ typedef NS_ENUM(NSUInteger, FieldType) {
     FieldType_Tag,
     FieldType_Live
 };
+
 
 @interface HFRowInfo () {
     NSString *_urlString;
@@ -117,6 +119,26 @@ typedef NS_ENUM(NSUInteger, FieldType) {
         // While first string is space, this HFRowInfo is subItem
         self.isSubItem = [[aURLString substringWithRange:NSMakeRange(0, 1)] isEqualToString:@" "];
     }
+
+    if ([HFUrlParser isValidateGoogleDocURL:_urlString]){
+        self.urlType = UrlType_Doc;
+    }
+    else if ([HFUrlParser isValidateGoogleDriverURL:_urlString]) {
+        self.urlType = UrlType_GoogleDrive;
+    }
+    else if ([HFUrlParser isValidateLiveURL:_urlString]) {
+        self.urlType = UrlType_Live;
+    }
+    else if ([HFUrlParser isValidateSheetURL:_urlString]) {
+        self.urlType = UrlType_Sheet;
+    }
+    else if ([HFUrlParser isValidateYoutubeURL:_urlString]) {
+        self.urlType = UrlType_Youtube;
+    }
+    else{
+        self.urlType = UrlType_Default;
+    }
+
 }
 
 - (NSString *)urlString

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 org.g0v. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "RATreeView.h"
 
 @class HFRowInfo;
 
@@ -15,8 +16,7 @@
 - (void) showSettings;
 @end
 
-@interface HFLeftPanelViewController : UITableViewController
+@interface HFLeftPanelViewController : UIViewController
 @property (nonatomic, readonly) NSString *hfId;
-@property (nonatomic, assign) IBOutlet UILabel *hfTitle;
 @property (weak, nonatomic) id <HFLeftPanelViewControllerDelegate> panelDelegate;
 @end

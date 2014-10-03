@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46BE2010698C7F0E4643F434 /* chat-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE26643682D37491A06063 /* chat-25.png */; };
+		46BE216908C37B21B86D5B20 /* globe-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2BD5BE3675BFC3B1246A /* globe-25.png */; };
+		46BE218399B2BFEF85FD99FE /* camcoder_pro-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2C13A35CFC7CC5476BF2 /* camcoder_pro-25.png */; };
+		46BE228A2AE2F8791A043D31 /* twitter-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE25B43FA4467AFC579947 /* twitter-25.png */; };
+		46BE23D6D7E85482172F9014 /* HFUrlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BE2102DAD36AD9A59BA314 /* HFUrlParser.m */; };
+		46BE257DE50ABB547E5936D9 /* youtube_copyrighted-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2C556F9C6CD370C586C1 /* youtube_copyrighted-26.png */; };
+		46BE26EB98E3F9CE7ED61D39 /* overview_pages_3-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2E4A67FA53F88729067C /* overview_pages_3-26.png */; };
+		46BE26F95FCE23C3D8309A31 /* document-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE21A71154DDBDC9F8547C /* document-25.png */; };
+		46BE2706CA1B135ED4FFC876 /* folder-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2A2F8ED408F74076415B /* folder-25.png */; };
+		46BE27EE11816D97CCBE311C /* google_drive_copyrighted-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE25C1013710B5AE28F568 /* google_drive_copyrighted-25.png */; };
+		46BE2B9A19B751D46888A50F /* github_copyrighted-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE237CED75B59347FB56A0 /* github_copyrighted-26.png */; };
+		46BE2D5906F0E6CC5B28F7DE /* video_call-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE200E41F657862B43664E /* video_call-26.png */; };
+		46BE2E03222B130BF273F2DA /* facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE29DF903C0EFA715E33DD /* facebook-25.png */; };
+		46BE2EDFDEB28EB500DFB6FF /* map_marker-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE29257152BDE62AABACC2 /* map_marker-26.png */; };
+		46BE2EF4A5549B54492D2A12 /* opened_folder-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 46BE2C7314A76F2E3105A478 /* opened_folder-25.png */; };
 		66CB169F19DAB13E00152D6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB169E19DAB13E00152D6B /* main.m */; };
 		66CB16A219DAB13E00152D6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16A119DAB13E00152D6B /* AppDelegate.m */; };
 		66CB16AA19DAB13E00152D6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66CB16A919DAB13E00152D6B /* Images.xcassets */; };
@@ -19,7 +34,6 @@
 		66CB16E519DAB6B100152D6B /* HFFoldrInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16E419DAB6B100152D6B /* HFFoldrInfo.m */; };
 		66CB16E819DAB75500152D6B /* HFSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16E719DAB75500152D6B /* HFSection.m */; };
 		66CB16EB19DAB7DA00152D6B /* HFRowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16EA19DAB7DA00152D6B /* HFRowInfo.m */; };
-		66CB16F119DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */; };
 		66D6707C19DD279D002496C0 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D6707B19DD279D002496C0 /* settings.png */; };
 		66D6707F19DD2EE6002496C0 /* HackfoldrClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D6707E19DD2EE6002496C0 /* HackfoldrClient.m */; };
 		7CACF60150FD4A92995A6133 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC99738C8DB74D86AA3D6CEC /* libPods.a */; };
@@ -36,6 +50,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46BE200E41F657862B43664E /* video_call-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_call-26.png"; sourceTree = "<group>"; };
+		46BE2102DAD36AD9A59BA314 /* HFUrlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFUrlParser.m; sourceTree = "<group>"; };
+		46BE21A71154DDBDC9F8547C /* document-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "document-25.png"; sourceTree = "<group>"; };
+		46BE237CED75B59347FB56A0 /* github_copyrighted-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "github_copyrighted-26.png"; sourceTree = "<group>"; };
+		46BE25B43FA4467AFC579947 /* twitter-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-25.png"; sourceTree = "<group>"; };
+		46BE25C1013710B5AE28F568 /* google_drive_copyrighted-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google_drive_copyrighted-25.png"; sourceTree = "<group>"; };
+		46BE26643682D37491A06063 /* chat-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat-25.png"; sourceTree = "<group>"; };
+		46BE29257152BDE62AABACC2 /* map_marker-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_marker-26.png"; sourceTree = "<group>"; };
+		46BE296CD81A3D182D5E79CD /* HFUrlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFUrlParser.h; sourceTree = "<group>"; };
+		46BE29DF903C0EFA715E33DD /* facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-25.png"; sourceTree = "<group>"; };
+		46BE2A2F8ED408F74076415B /* folder-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder-25.png"; sourceTree = "<group>"; };
+		46BE2BD5BE3675BFC3B1246A /* globe-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe-25.png"; sourceTree = "<group>"; };
+		46BE2C13A35CFC7CC5476BF2 /* camcoder_pro-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camcoder_pro-25.png"; sourceTree = "<group>"; };
+		46BE2C556F9C6CD370C586C1 /* youtube_copyrighted-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youtube_copyrighted-26.png"; sourceTree = "<group>"; };
+		46BE2C7314A76F2E3105A478 /* opened_folder-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "opened_folder-25.png"; sourceTree = "<group>"; };
+		46BE2E4A67FA53F88729067C /* overview_pages_3-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overview_pages_3-26.png"; sourceTree = "<group>"; };
 		66BDA81419DC667100C5660B /* CommonDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDef.h; sourceTree = "<group>"; };
 		66BDA81519DC66AB00C5660B /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
 		66CB169919DAB13E00152D6B /* hackfoldr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackfoldr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +91,6 @@
 		66CB16E719DAB75500152D6B /* HFSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFSection.m; sourceTree = "<group>"; };
 		66CB16E919DAB7DA00152D6B /* HFRowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HFRowInfo.h; sourceTree = "<group>"; };
 		66CB16EA19DAB7DA00152D6B /* HFRowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFRowInfo.m; sourceTree = "<group>"; };
-		66CB16EF19DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLExpandableTableViewControllerHeaderCell.h; path = ../Cell/SLExpandableTableViewControllerHeaderCell.h; sourceTree = "<group>"; };
-		66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLExpandableTableViewControllerHeaderCell.m; path = ../Cell/SLExpandableTableViewControllerHeaderCell.m; sourceTree = "<group>"; };
 		66D6707B19DD279D002496C0 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		66D6707D19DD2EE6002496C0 /* HackfoldrClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackfoldrClient.h; sourceTree = "<group>"; };
 		66D6707E19DD2EE6002496C0 /* HackfoldrClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackfoldrClient.m; sourceTree = "<group>"; };
@@ -132,6 +160,8 @@
 				66CB16DA19DAB46800152D6B /* Main_iPad.storyboard */,
 				66CB16DC19DAB46800152D6B /* Main_iPhone.storyboard */,
 				66CB169C19DAB13E00152D6B /* Supporting Files */,
+				46BE2102DAD36AD9A59BA314 /* HFUrlParser.m */,
+				46BE296CD81A3D182D5E79CD /* HFUrlParser.h */,
 			);
 			path = hackfoldr;
 			sourceTree = "<group>";
@@ -181,8 +211,6 @@
 			children = (
 				66CB16CD19DAB2E300152D6B /* HFCenterViewController.h */,
 				66CB16CE19DAB2E300152D6B /* HFCenterViewController.m */,
-				66CB16EF19DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.h */,
-				66CB16F019DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m */,
 				66CB16CF19DAB2E300152D6B /* HFLeftPanelViewController.h */,
 				66CB16D019DAB2E300152D6B /* HFLeftPanelViewController.m */,
 				66CB16D119DAB2E300152D6B /* HFSettingViewController.h */,
@@ -195,6 +223,20 @@
 			isa = PBXGroup;
 			children = (
 				66D6707B19DD279D002496C0 /* settings.png */,
+				46BE26643682D37491A06063 /* chat-25.png */,
+				46BE29DF903C0EFA715E33DD /* facebook-25.png */,
+				46BE2A2F8ED408F74076415B /* folder-25.png */,
+				46BE237CED75B59347FB56A0 /* github_copyrighted-26.png */,
+				46BE25C1013710B5AE28F568 /* google_drive_copyrighted-25.png */,
+				46BE2C7314A76F2E3105A478 /* opened_folder-25.png */,
+				46BE2C556F9C6CD370C586C1 /* youtube_copyrighted-26.png */,
+				46BE21A71154DDBDC9F8547C /* document-25.png */,
+				46BE29257152BDE62AABACC2 /* map_marker-26.png */,
+				46BE2E4A67FA53F88729067C /* overview_pages_3-26.png */,
+				46BE25B43FA4467AFC579947 /* twitter-25.png */,
+				46BE200E41F657862B43664E /* video_call-26.png */,
+				46BE2C13A35CFC7CC5476BF2 /* camcoder_pro-25.png */,
+				46BE2BD5BE3675BFC3B1246A /* globe-25.png */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -293,6 +335,20 @@
 				66CB16DF19DAB46800152D6B /* Main_iPhone.storyboard in Resources */,
 				66CB16DE19DAB46800152D6B /* Main_iPad.storyboard in Resources */,
 				66CB16AA19DAB13E00152D6B /* Images.xcassets in Resources */,
+				46BE2010698C7F0E4643F434 /* chat-25.png in Resources */,
+				46BE2E03222B130BF273F2DA /* facebook-25.png in Resources */,
+				46BE2706CA1B135ED4FFC876 /* folder-25.png in Resources */,
+				46BE2B9A19B751D46888A50F /* github_copyrighted-26.png in Resources */,
+				46BE27EE11816D97CCBE311C /* google_drive_copyrighted-25.png in Resources */,
+				46BE2EF4A5549B54492D2A12 /* opened_folder-25.png in Resources */,
+				46BE257DE50ABB547E5936D9 /* youtube_copyrighted-26.png in Resources */,
+				46BE26F95FCE23C3D8309A31 /* document-25.png in Resources */,
+				46BE2EDFDEB28EB500DFB6FF /* map_marker-26.png in Resources */,
+				46BE26EB98E3F9CE7ED61D39 /* overview_pages_3-26.png in Resources */,
+				46BE228A2AE2F8791A043D31 /* twitter-25.png in Resources */,
+				46BE2D5906F0E6CC5B28F7DE /* video_call-26.png in Resources */,
+				46BE218399B2BFEF85FD99FE /* camcoder_pro-25.png in Resources */,
+				46BE216908C37B21B86D5B20 /* globe-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66CB16F119DAC37100152D6B /* SLExpandableTableViewControllerHeaderCell.m in Sources */,
 				66CB16D819DAB2E300152D6B /* HFLeftPanelViewController.m in Sources */,
 				66CB16EB19DAB7DA00152D6B /* HFRowInfo.m in Sources */,
 				66D6707F19DD2EE6002496C0 /* HackfoldrClient.m in Sources */,
@@ -353,6 +408,7 @@
 				66CB169F19DAB13E00152D6B /* main.m in Sources */,
 				66CB16E819DAB75500152D6B /* HFSection.m in Sources */,
 				66CB16E519DAB6B100152D6B /* HFFoldrInfo.m in Sources */,
+				46BE23D6D7E85482172F9014 /* HFUrlParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +533,7 @@
 			baseConfigurationReference = 9A28B143C50F481D85E74E9F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = hackfoldr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -490,6 +547,7 @@
 			baseConfigurationReference = 9A28B143C50F481D85E74E9F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = hackfoldr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
