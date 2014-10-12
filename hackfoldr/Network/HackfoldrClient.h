@@ -17,4 +17,9 @@
                success:(void (^)(HFFoldrInfo *hfInfo))success
                failure:(void (^)(NSError *error, id CSV))failure;
 
+- (void)requestEthercalc_name:(NSString *)urlStr
+                      success:(void (^)(NSString *ethercalc_name))success
+                      failure:(void (^)(NSError *error))failure;
+
+
 @end

@@ -30,7 +30,15 @@ static HackfoldrClient *sharedHackfoldrClient = nil;
                success:(void (^)(HFFoldrInfo *hfInfo))success
                failure:(void (^)(NSError *error, id CSV))failure
 {
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@/csv", Ethercalc_URL,hfId];
+    
+    NSString *urlStr;
+    if ([hfId length] < 40){
+        urlStr = [NSString stringWithFormat:Ethercalc_URL,hfId];
+    }
+    else {
+        urlStr = [NSString stringWithFormat:GoogleSheet_URL,hfId];
+    }
+    
     NSURL *csvurl = [NSURL URLWithString:urlStr];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:csvurl];
@@ -57,46 +65,54 @@ static HackfoldrClient *sharedHackfoldrClient = nil;
                                       }
      ];
     [operation start];
-    
-    
-//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
-//    
-//    
-//    
-//    HackfoldrTaskCompletionSource *source = [HackfoldrTaskCompletionSource taskCompletionSource];
-//    source.connectionTask = [manager GET:urlStr parameters:NULL success:^(NSURLSessionDataTask *task, id csvFieldArray) {
-//
-//        [source setResult:csvFieldArray];
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        [source setError:error];
-//    }];
-
-    
-//    AFCSVRequestOperation *requestOperation = [[AFCSVRequestOperation alloc] initWithRequest:request];
-//    
-//    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        if (success) {
-////            success(operation.request, operation.response, responseObject);
-//       //     success([self responseCSV]);
-//            //save to doc path
-//            NSString *docPath = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-//            NSString *csvPath = [docPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.csv",hfId]];
-//            [operation.responseString writeToFile:csvPath
-//                                       atomically:YES
-//                                         encoding:NSUTF8StringEncoding
-//                                            error:nil];
-//            [self parseCSVToPageInfo:csvPath];
-//        }
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        if (failure) {
-//  //          failure(operation.request, operation.response, error, [(AFCSVRequestOperation *)operation responseCSV]);
-//    //        failure (error, [(AFCSVRequestOperation *)operation responseCSV]);
-//        }
-//    }];
-//    
-//    [requestOperation start];
+   
 }
+
+- (void)requestEthercalc_name:(NSString *)urlStr
+                      success:(void (^)(NSString *ethercalc_name))success
+                      failure:(void (^)(NSError *error))failure
+{
+    
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    
+    // strong hackfoldr always return 404 not found but have responseString
+    [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        
+    }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          if ([operation.response statusCode] == 404 && operation.responseString != NULL){
+                                              // try to find ethercalc_name
+                                              //ex:var ethercalc_name     = "1VJPg85Ub1rcSpH1Hr0PZ7ybBuepxFWi6QEBtO6qMsZs"
+                                              NSString* regexString = @"var\\s+ethercalc_name\\s+=\\s+\"([^/]*)\"";
+                                              NSRegularExpression *regex =
+                                              [NSRegularExpression regularExpressionWithPattern:regexString
+                                                                                        options:NSRegularExpressionCaseInsensitive
+                                                                                          error:nil];
+                                              NSRange range = NSMakeRange(0,operation.responseString.length);
+                                              NSRange match = [regex rangeOfFirstMatchInString:operation.responseString
+                                                                                         options:0
+                                                                                           range:range];
+                                              NSString *tmp = [operation.responseString substringWithRange:match];
+                                              NSUInteger loc = [tmp rangeOfString:@"\"" options:0].location;
+                                              NSRange nameRange = NSMakeRange(loc+1, tmp.length-loc-2);
+                                              NSString *ethercalc_name = [tmp substringWithRange:nameRange];
+                                              success(ethercalc_name);
+                                          }
+                                          else {
+                                              NSLog(@"error: %@",  operation.responseString);
+                                          }
+                                          
+                                      }
+     ];
+    [operation start];
+}
+
 
 
 #pragma mark 

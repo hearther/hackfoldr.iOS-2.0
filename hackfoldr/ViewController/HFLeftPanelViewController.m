@@ -58,11 +58,14 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
 
 - (void) loadHackfoldr{
     
-    NSString *defaultHfId = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultHackfoldrPage];
+    NSString *defaultHfId = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultHackfoldrEthercalcNameKey];
     if (!defaultHfId || defaultHfId.length == 0) {
-        defaultHfId = DefaultHackfoldrId;
+        defaultHfId = DefaultHackfoldrEthercalcName;
+        [[NSUserDefaults standardUserDefaults] setObject:DefaultHackfoldrURL
+                                                  forKey:DefaultHackfoldrURLKey];
+        
         [[NSUserDefaults standardUserDefaults] setObject:defaultHfId
-                                                  forKey:DefaultHackfoldrPage];
+                                                  forKey:DefaultHackfoldrEthercalcNameKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     _hfId = defaultHfId;
@@ -97,6 +100,14 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
 
 }
 
+- (BOOL)treeView:(RATreeView *)treeView shouldExpandRowForItem:(id)item
+{
+   if ([item isKindOfClass:[HFSection class]]) {
+       return YES;
+   }
+    return NO;
+}
+
 - (void)treeView:(RATreeView *)treeView willCollapseRowForItem:(id)item
 {
     if ([item isKindOfClass:[HFSection class]]) {
@@ -105,6 +116,10 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
     }
 }
 
+- (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item
+{
+    
+}
 
 #pragma mark TreeView Data Source
 
@@ -120,6 +135,7 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
         if ([dataObject.subItems count] > 0){
             isSection = YES;
         }
+        rowInfo = dataObject.rowInfo;
 
     }
     else {

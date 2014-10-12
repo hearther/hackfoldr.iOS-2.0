@@ -11,8 +11,8 @@
 #define GOOGLE_SHEET_PATTERN @"https:\\/\\/docs\\.google\\.com/spreadsheet/ccc\\?key=([^/?&]+)"
 #define USTREAM_PATTEN @"https?:\\/\\/(?:www\\.)?ustream\\.tv/(?:embed|channel)/([-\\w]+)"
 #define GOOGLE_DRIVER_PATTERN @"^.*.drive.google.com\/"
-#define GOOGLE_MAP_PATTERN @"^.*.mapsengine.google.com\/"
-#define GOOGLE_MAP_PATTERN1 @"^.*.www.google.com\\/maps\\"
+#define GOOGLE_MAP_PATTERN @"^.*.mapsengine.google.com/*"
+#define GOOGLE_MAP_PATTERN1 @"^.*.www.google.com/maps/*"
 #define UMAP_PATTERN @"^.*.umap.fluv.io\/"
 
 @implementation HFUrlParser

@@ -23,9 +23,7 @@
 
 - (void) viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSString *defaultHfId = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultHackfoldrPage];
-    self.idTextField.text = defaultHfId;
-    self.urlTextField.text = [NSString stringWithFormat:@"hack.etblue.tw/%@",defaultHfId];
+    self.urlTextField.text =[[NSUserDefaults standardUserDefaults] objectForKey:DefaultHackfoldrURLKey];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,36 +43,34 @@
 
 - (IBAction) updateHackFoldrURL:(id)sender
 {
-    NSString* hfId;
-    if (self.idTextField.text != NULL)
+    NSString *input = self.urlTextField.text;
+    
+    [[HackfoldrClient sharedHackfoldrClient] requestEthercalc_name:input
+                                                           success:^(NSString *ethercalc_name)
     {
-        hfId = self.idTextField.text;
-    }
-    else {
-    
-        NSString *input = self.urlTextField.text;
-        NSString* regexString = @"hack.etblue.tw/([^/]*)/*";
-        NSRegularExpression *regex =
-        [NSRegularExpression regularExpressionWithPattern:regexString
-                                                  options:NSRegularExpressionCaseInsensitive
-                                                    error:nil];
-        NSRange range = NSMakeRange(0,input.length);
-        hfId = [regex stringByReplacingMatchesInString:input
-                                               options:0
-                                                 range:range
-                                          withTemplate:@"$1"];
-    }
+       
+       [[NSUserDefaults standardUserDefaults] setObject:input
+                                                 forKey:DefaultHackfoldrURLKey];
+       [[NSUserDefaults standardUserDefaults] setObject:ethercalc_name
+                                                 forKey:DefaultHackfoldrEthercalcNameKey];
+       [[NSUserDefaults standardUserDefaults] synchronize];
+       [[NSNotificationCenter defaultCenter] postNotificationName:HackfoldrPageChangeIdNotification
+                                                           object:NULL];
+       
+       
+       [self.navigationController popViewControllerAnimated:YES];
 
-    //[[HackfoldrClient sharedClient] setHackfoldrId:hfId];
+    }
+                                                           failure:^(NSError *error)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Something wrong"
+                                                        message:@"請檢查網址是否正確"
+                                                       delegate:NULL
+                                              cancelButtonTitle:NULL
+                                              otherButtonTitles:nil];
+        [alert show];
+    }];
     
-    [[NSUserDefaults standardUserDefaults] setObject:hfId
-                                              forKey:DefaultHackfoldrPage];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    [[NSNotificationCenter defaultCenter] postNotificationName:HackfoldrPageChangeIdNotification
-                                                        object:NULL];
-    
-    
-    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

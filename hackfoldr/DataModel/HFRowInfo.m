@@ -135,6 +135,9 @@ typedef NS_ENUM(NSUInteger, FieldType) {
     else if ([HFUrlParser isValidateYoutubeURL:_urlString]) {
         self.urlType = UrlType_Youtube;
     }
+    else if ([HFUrlParser isValidateMapURL:_urlString]) {
+        self.urlType = UrlType_Map;
+    }
     else{
         self.urlType = UrlType_Default;
     }
