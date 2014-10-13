@@ -13,9 +13,15 @@
 @interface HackfoldrClient : NSObject
 @property (nonatomic, strong, readonly) NSString *hfId;
 + (HackfoldrClient *)sharedHackfoldrClient;
-- (void)requestCSVData:(NSString *)hfId
-               success:(void (^)(HFFoldrInfo *hfInfo))success
-               failure:(void (^)(NSError *error, id CSV))failure;
+
+- (void)requestEthercalcCSVData:(NSString *)hfId
+                        success:(void (^)(HFFoldrInfo *hfInfo))success
+                        failure:(void (^)(NSError *error, NSString *gSheetId))failure;
+
+- (void)requestGSheetCSVData:(NSString *)hfId
+                     success:(void (^)(HFFoldrInfo *hfInfo))success
+                     failure:(void (^)(NSError *error))failure;
+
 
 - (void)requestEthercalc_name:(NSString *)urlStr
                       success:(void (^)(NSString *ethercalc_name))success

@@ -5,12 +5,12 @@
 
 #import "HFUrlParser.h"
 
-#define YOUTUBE_PATTERN @"https?:\\/\\/(?:youtu\\.be/|(?:www\\.)?youtube\\.com/(?:embed/|watch\\?v=))([-\\w]+)"
-#define GOOGLE_DOC_PATTERN @"https://docs.google.com/document/(?:d/)?([^/]+)/"
-#define ETHERCALC_PATTERN @"^https?:\/\/www\.ethercalc\.(?:com|org)/(.*)"
-#define GOOGLE_SHEET_PATTERN @"https:\\/\\/docs\\.google\\.com/spreadsheet/ccc\\?key=([^/?&]+)"
-#define USTREAM_PATTEN @"https?:\\/\\/(?:www\\.)?ustream\\.tv/(?:embed|channel)/([-\\w]+)"
-#define GOOGLE_DRIVER_PATTERN @"^.*.drive.google.com\/"
+#define YOUTUBE_PATTERN @"(?:youtu\\.be/|(?:www\\.)?youtube\\.com/(?:embed/|watch\\?v=))([-\\w]+)"
+#define GOOGLE_DOC_PATTERN @"^.*.docs.google.com/document/*"
+#define ETHERCALC_PATTERN @"^.*.www.ethercalc.(?:com|org)/(.*)"
+#define GOOGLE_SHEET_PATTERN @"^.*.docs.google.com/spreadsheet/*"
+#define USTREAM_PATTEN @"^.*.ustream.tv/*"
+#define GOOGLE_DRIVER_PATTERN @"^.*.drive.google.com/*"
 #define GOOGLE_MAP_PATTERN @"^.*.mapsengine.google.com/*"
 #define GOOGLE_MAP_PATTERN1 @"^.*.www.google.com/maps/*"
 #define UMAP_PATTERN @"^.*.umap.fluv.io\/"

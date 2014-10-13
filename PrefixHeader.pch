@@ -14,5 +14,5 @@
 
 #import "CommonDef.h"
 #import "HackfoldrClient.h"
-
+#import "RegExCategories.h"
 #endif

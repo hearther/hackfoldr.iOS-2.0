@@ -5,3 +5,5 @@ platform :ios, "7.0"
   pod 'TOWebViewController'
   pod 'MMPCSVUtil'
   pod "RATreeView", "~> 0.9.1"
+  pod 'RegExCategories', '~> 1.0'
+  pod 'Colours', '~> 5.5.0'

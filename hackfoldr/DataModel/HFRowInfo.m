@@ -8,13 +8,15 @@
 
 #import "HFRowInfo.h"
 #import "HFUrlParser.h"
+#import "Colours.h"
 
 typedef NS_ENUM(NSUInteger, FieldType) {
     FieldType_URLString = 0,
     FieldType_Name,
     FieldType_Actions,
     FieldType_Tag,
-    FieldType_Live
+    FieldType_Editor_comments,
+    FieldType_Hint
 };
 
 
@@ -32,14 +34,16 @@ typedef NS_ENUM(NSUInteger, FieldType) {
         copy.index = self.index;
         copy.action = self.action;
         
+        
         // Copy NSObject subclasses
         copy.urlString = [self.urlString copyWithZone:zone];
         copy.name = [self.name copyWithZone:zone];
         copy.tag = [self.tag copyWithZone:zone];
-        copy.live = [self.live copyWithZone:zone];
-        
+        copy.tagColor = [self.tagColor copyWithZone:zone];
+        copy.editor_comments = [self.editor_comments copyWithZone:zone];
+        copy.hints = [self.hints copyWithZone:zone];
     }
-    
+
     return copy;
 }
 
@@ -63,10 +67,13 @@ typedef NS_ENUM(NSUInteger, FieldType) {
                 self.name = field;
                 break;
             case FieldType_Actions:
-                if ([field caseInsensitiveCompare:@"\"{\"\"expand\"\": true}\""] == NSOrderedSame){
+                if ([field caseInsensitiveCompare:@"\"{\"\"expand\"\": true}\""] == NSOrderedSame ||
+                    [field caseInsensitiveCompare:@"expand:expand"] == NSOrderedSame ){
                     self.action = ActionType_Default_Expand;
                 }
-                else if ([field caseInsensitiveCompare:@"\"{\"\"expand\"\": false}\""] == NSOrderedSame){
+                
+                else if ([field caseInsensitiveCompare:@"\"{\"\"expand\"\": false}\""] == NSOrderedSame ||
+                         [field caseInsensitiveCompare:@"expand:collapse"] == NSOrderedSame){
                     self.action = ActionType_Default_Not_Expand;
                 }
                 else {
@@ -74,10 +81,13 @@ typedef NS_ENUM(NSUInteger, FieldType) {
                 }
                 break;
             case FieldType_Tag:
-                self.tag = field;
+                [self parseTagStr:field];
                 break;
-            case FieldType_Live:
-                self.live = field;
+            case FieldType_Editor_comments:
+                self.editor_comments = field;
+                break;
+            case FieldType_Hint:
+                self.hints = field;
                 break;
                 
             default:
@@ -101,6 +111,58 @@ typedef NS_ENUM(NSUInteger, FieldType) {
     
     return NO;
 }
+
+- (void) parseTagStr:(NSString *)aStr
+{
+    
+    NSString *aTagStr = aStr.lowercaseString;
+    
+    NSArray *replaceColorArr = @[
+                            @[RX(@"^gray"),[UIColor grayColor]],
+                            @[RX(@"^deep-blue"),[UIColor indigoColor]],
+                            @[RX(@"^deep-green"),[UIColor hollyGreenColor]],
+                            @[RX(@"^deep-purple"),[UIColor coolPurpleColor]],
+                            @[RX(@"^black"),[UIColor blackColor]],
+                            @[RX(@"^green"),[UIColor greenColor]],
+                            @[RX(@"^red"),[UIColor redColor]],
+                            @[RX(@"^blue"),[UIColor blueColor]],
+                            @[RX(@"^orange"),[UIColor orangeColor]],
+                            @[RX(@"^purple"),[UIColor purpleColor]],
+                            @[RX(@"^teal"),[UIColor tealColor]],
+                            @[RX(@"^yellow"),[UIColor yellowColor]],
+                            @[RX(@"^pink"),[UIColor pinkColor]]];
+    
+    NSArray *replaceOtherArr = @[
+                                 @[RX(@":issue"),[UIColor grayColor]],
+                                 @[RX(@":important"),[UIColor redColor]],
+                                 @[RX(@":warning"),[UIColor yellowColor]]];
+
+    
+    
+    
+    if(aTagStr.length > 0){
+        
+        for (NSArray *par in replaceColorArr) {
+            if ([aTagStr isMatch:par[0]]){
+                self.tagColor = (UIColor *)par[1];
+                aTagStr = [aTagStr replace:par[0] with:@""];
+            }
+        }
+        
+        for (NSArray *par in replaceOtherArr) {
+            if ([aTagStr isMatch:par[0]]){
+                self.tagColor = (UIColor *)par[1];
+                aTagStr = [aTagStr replace:par[0] with:@""];
+            }
+        }
+    }
+    
+    self.tag = aTagStr;
+    
+    
+    
+}
+
 
 - (void)setUrlString:(NSString *)aURLString
 {
@@ -163,6 +225,17 @@ typedef NS_ENUM(NSUInteger, FieldType) {
     if (self.action) {
         [description appendFormat:@"actions: %d ", self.action];
     }
+    if (self.tag) {
+        [description appendFormat:@"tag: %@ ", self.tag];
+    }
+
+    if (self.editor_comments) {
+        [description appendFormat:@"editor_comments: %@ ", self.editor_comments];
+    }
+    if (self.hints) {
+        [description appendFormat:@"hints: %@ ", self.hints];
+    }
+
     
     [description appendFormat:@"isSubItem: %@", self.isSubItem ? @"YES" : @"NO"];
     

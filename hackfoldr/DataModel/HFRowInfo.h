@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, HFRowInfoActionType) {
     ActionType_None = 0,
@@ -40,8 +41,9 @@ typedef NS_ENUM(NSUInteger, HFRowInfoUrlType) {
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) HFRowInfoActionType action;
 @property (nonatomic, strong) NSString *tag;
-@property (nonatomic, strong) NSString *live;
-
+@property (nonatomic, strong) UIColor  *tagColor;
+@property (nonatomic, strong) NSString *editor_comments;
+@property (nonatomic, strong) NSString *hints;
 
 @property (nonatomic, assign) BOOL isSubItem;
 

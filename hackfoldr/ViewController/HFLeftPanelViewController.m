@@ -69,14 +69,19 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     _hfId = defaultHfId;
-    [[HackfoldrClient sharedHackfoldrClient] requestCSVData:self.hfId
-                                        success: ^(HFFoldrInfo *hfInfo) {
-                                            self.hfInfo = hfInfo;
-                                            self.hfTitle.text = hfInfo.title;
-                                            [self.treeView reloadData];
-                                        } failure:^(NSError *error, id CSV) {
-                                            
-                                        }];
+    if ([_hfId length]> 40){
+        [[HackfoldrClient sharedHackfoldrClient] requestGSheetCSVData:self.hfId
+                                                              success: ^(HFFoldrInfo *hfInfo)
+         {
+            self.hfInfo = hfInfo;
+            self.hfTitle.text = hfInfo.title;
+            [self.treeView reloadData];
+         }
+                                                              failure:^(NSError *error){}];
+        
+    }
+    else {
+    }
 }
 
 #pragma mark TreeView Delegate methods
@@ -118,7 +123,24 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
 
 - (void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item
 {
+    HFRowInfo *rowInfo;
+    if ([item isKindOfClass:[HFSection class]]){
+        return;
+    }
+    else {
+        rowInfo = item;
+    }
     
+    NSString *urlString = rowInfo.urlString;
+    NSLog(@"url: %@", urlString);
+    
+    if (urlString && urlString.length == 0) {
+        return;
+    }
+    
+    if (self.panelDelegate){
+        [self.panelDelegate loadWithRowInfo:rowInfo];
+    }
 }
 
 #pragma mark TreeView Data Source
@@ -141,11 +163,11 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
     else {
         rowInfo = item;
         cell.textLabel.text = rowInfo.name;
-        [cell setBackgroundColor:[UIColor whiteColor]];
+        
     }
 
+    [cell setBackgroundColor:rowInfo.tagColor];
     if (isSection){
-        [cell setBackgroundColor:[UIColor lightGrayColor]];
         if ([self.treeView isCellExpanded:cell]){
             [cell.imageView setImage:[UIImage imageNamed:@"opened_folder-25.png"]];
         }
@@ -154,8 +176,6 @@ static NSString *CellIdentifier = @"HFLeftPanelViewControllerCell";
         }
     }
     else {
-        [cell setBackgroundColor:[UIColor whiteColor]];
-
         switch (rowInfo.urlType){
             case UrlType_Chat:
                 [cell.imageView setImage:[UIImage imageNamed:@"chat-25.png"]];

@@ -12,7 +12,8 @@
 
 @interface HFFoldrInfo : NSObject
 
-- (instancetype)initWithCSVArray:(NSArray *)csvArray;
+- (instancetype)initWithEthercalcCSVArray:(NSArray *)csvArray;
+- (instancetype)initWithGSheetCSVArray:(NSArray *)csvArray;
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong, readonly) NSArray *sections;

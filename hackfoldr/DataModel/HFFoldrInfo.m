@@ -15,18 +15,28 @@
 
 @implementation HFFoldrInfo
 
-- (instancetype)initWithCSVArray:(NSArray *)csvArray
+- (instancetype)initWithEthercalcCSVArray:(NSArray *)csvArray
 {
     self = [super init];
     if (self) {
-        [self parseData:csvArray];
+        [self parseEthercalcData:csvArray];
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithGSheetCSVArray:(NSArray *)csvArray
+{
+    self = [super init];
+    if (self) {
+        [self parseGSheetData:csvArray];
     }
     
     return self;
 }
 
 
-- (void)parseData:(NSArray *)csvArray
+- (void)parseEthercalcData:(NSArray *)csvArray
 {
     if (!csvArray || csvArray.count == 0) {
         return;
@@ -67,6 +77,56 @@
                     [tmp addObject:curSection];
                 }
                 inSection = TRUE;
+            }
+        }
+        
+    }
+    //    }];
+    _sections = tmp;
+    //    self.fields = cellsWithoutTitleField;
+}
+
+- (void)parseGSheetData:(NSArray *)csvArray
+{
+    if (!csvArray || csvArray.count == 0) {
+        return;
+    }
+    
+    NSMutableArray *tmp = [NSMutableArray array];
+    HFSection *curSection;
+    BOOL inSection = FALSE;
+
+    //skip first row
+    for (int x= 1; x<[csvArray count]; x++)
+    {
+        NSArray *fields = [csvArray objectAtIndex:x];
+        HFRowInfo *rowInfo = [[HFRowInfo alloc] initWithRowData:fields];
+        
+        // first row is title row
+        if (self.title == NULL) {
+            self.title = rowInfo.name;
+            continue;
+        }
+        
+        // other row
+        if (!rowInfo.isEmpty) {
+            
+            if ( rowInfo.action == ActionType_Default_Expand ||
+                rowInfo.action == ActionType_Default_Not_Expand ||
+                [rowInfo.urlString length] == 0)
+            {
+                //another new section
+                curSection = [[HFSection alloc] initWithRowInfo:rowInfo];
+                [tmp addObject:curSection];
+                inSection = TRUE;
+            }
+            else if (!inSection){
+                [tmp addObject:rowInfo];
+            }
+            else {
+                if (rowInfo.action == ActionType_None){
+                    [curSection addSubItem:rowInfo];
+                }
             }
         }
         

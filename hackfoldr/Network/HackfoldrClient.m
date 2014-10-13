@@ -26,19 +26,60 @@ static HackfoldrClient *sharedHackfoldrClient = nil;
 }
 
 
-- (void)requestCSVData:(NSString *)hfId
-               success:(void (^)(HFFoldrInfo *hfInfo))success
-               failure:(void (^)(NSError *error, id CSV))failure
+- (void)requestEthercalcCSVData:(NSString *)hfId
+                        success:(void (^)(HFFoldrInfo *hfInfo))success
+                        failure:(void (^)(NSError *error, NSString *gSheetId))failure
+{
+    NSString *urlStr = [NSString stringWithFormat:Ethercalc_URL,hfId];
+    
+    NSLog(@"url is %@", urlStr);
+    NSURL *csvurl = [NSURL URLWithString:urlStr];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:csvurl];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.csv", hfId]];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:path append:NO];
+    
+    [operation  setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"success: %@", operation.responseString);
+        NSArray *allRecords = [[MMPCSV readURL:[NSURL fileURLWithPath:path]] all];
+        
+        // jump from ethercalc to google spreadsheet when A1 is filled with a gsheet id
+        NSString *A1Str = allRecords[0][0];
+        if ([A1Str length]>= 40)
+        {
+            //TODO.....
+        }
+        
+        HFFoldrInfo *hfInfo;
+        hfInfo = [[HFFoldrInfo alloc] initWithEthercalcCSVArray:allRecords];
+        NSLog(@"hf folder info %@", hfInfo);
+        success(hfInfo);
+        
+    }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          NSLog(@"error: %@",  operation.responseString);
+                                          
+                                      }
+     ];
+    [operation start];
+
+}
+
+
+- (void)requestGSheetCSVData:(NSString *)hfId
+                     success:(void (^)(HFFoldrInfo *hfInfo))success
+                     failure:(void (^)(NSError *error))failure
 {
     
     NSString *urlStr;
-    if ([hfId length] < 40){
-        urlStr = [NSString stringWithFormat:Ethercalc_URL,hfId];
-    }
-    else {
-        urlStr = [NSString stringWithFormat:GoogleSheet_URL,hfId];
-    }
+    urlStr = [NSString stringWithFormat:GoogleSheet_URL,hfId];
     
+    NSLog(@"url is %@", urlStr);
     NSURL *csvurl = [NSURL URLWithString:urlStr];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:csvurl];
@@ -54,7 +95,9 @@ static HackfoldrClient *sharedHackfoldrClient = nil;
         NSLog(@"success: %@", operation.responseString);
         NSArray *allRecords = [[MMPCSV readURL:[NSURL fileURLWithPath:path]] all];
         
-        HFFoldrInfo *hfInfo = [[HFFoldrInfo alloc] initWithCSVArray:allRecords];
+        
+        
+        HFFoldrInfo *hfInfo = [[HFFoldrInfo alloc] initWithGSheetCSVArray:allRecords];
         NSLog(@"hf folder info %@", hfInfo);
         success(hfInfo);
         
